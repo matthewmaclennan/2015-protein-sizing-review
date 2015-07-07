@@ -22,3 +22,5 @@ syn<-unlist(strsplit(unlist(xpathApply(CMO.owl,"//class/label[.='dynamic light s
       "\n +"))
 query2<-paste0("%22",gsub(" ","+",syn),"%22")
 query1<-"%22dynamic+light+scattering%22"
+q1and2<-apply(as.matrix(expand.grid(query1,query2)),1,function(x) paste0(x,collapse="+AND+"))
+q1or2<-apply(as.matrix(expand.grid(query1,query2)),1,function(x) paste0(x,collapse="+OR+"))

@@ -45,4 +45,5 @@ c1or2<-c(c1or2,as.numeric(xpathApply(htmlTreeParse(getURL(paste0("http://api.els
         useInternalNode=T),"//totalresults",xmlValue)))
 }
 cmatrix<-cbind(as.matrix(q1and2),as.matrix(c1and2),as.matrix(q1or2),as.matrix(c1or2))
+colnames(cmatrix)<-c("AND search","1 and 2","OR search","1 or 2")
 }

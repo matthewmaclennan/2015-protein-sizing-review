@@ -3,7 +3,7 @@ scscj<-function(apikey,query1,query2){
   listOR<-c()
   for(i in 1:length(query1)){
     for(j in 1:length(query2)){
-      listOR<-c(listOR,as.numeric(xpathApply(htmlTreeParse(getURL(paste0("http://api.elsevier.com/content/search/scopus/?apiKey=",apikey,"&query=",query1[[i]]"+OR+",qu,"&field=doi&httpAccept=%20application%2Fatom%2Bxml&count=1&start=0")),
+      listOR<-c(listOR,as.numeric(xpathApply(htmlTreeParse(getURL(paste0("http://api.elsevier.com/content/search/scopus/?apiKey=",apikey,"&query=",query1[[i]],"+OR+",qu,"&field=doi&httpAccept=%20application%2Fatom%2Bxml&count=1&start=0")),
         useInternalNode=T),"//totalresults",xmlValue)))
     }
   }
